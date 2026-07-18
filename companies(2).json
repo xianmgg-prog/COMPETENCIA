@@ -1,0 +1,172 @@
+[
+  {
+    "id": "snipes_spain_sl",
+    "name": "SNIPES SPAIN SL",
+    "sector": "Retail / Moda",
+    "country": "España",
+    "latest_year": 2024,
+    "years_available": [
+      2024,
+      2023,
+      2022
+    ],
+    "financial_summary": {
+      "ventas": 73442708.94,
+      "margen_bruto": 33686397.67,
+      "ebitda": 3475146.5,
+      "ebit": 1890988.1,
+      "resultado_neto": 1612556.62,
+      "activo_total": 30117474.36,
+      "patrimonio_neto": 20690352.91,
+      "pasivo_total": 9427121.45,
+      "margen_ebitda_pct": 4.73,
+      "margen_neto_pct": 2.2,
+      "roa": 6.28,
+      "roe": 9.12,
+      "rentabilidad_explotacion": 11.54
+    },
+    "trends": {
+      "ventas": -0.05,
+      "margen_bruto": 1.14,
+      "ebitda": 12.83,
+      "resultado_neto": 89.75,
+      "patrimonio_neto": 8.45
+    }
+  },
+  {
+    "id": "foot_district_sl",
+    "name": "FOOT DISTRICT SL",
+    "sector": "Retail / Moda",
+    "country": "España",
+    "latest_year": 2024,
+    "years_available": [
+      2024,
+      2023,
+      2022
+    ],
+    "financial_summary": {
+      "ventas": 26653480.88,
+      "margen_bruto": 10550149.28,
+      "ebitda": 2201352.97,
+      "ebit": 1683041.99,
+      "resultado_neto": 1106037.61,
+      "activo_total": 10081931.06,
+      "patrimonio_neto": 3368919.94,
+      "pasivo_total": 6713011.119999999,
+      "margen_ebitda_pct": 8.26,
+      "margen_neto_pct": 4.15,
+      "roa": 16.69,
+      "roe": 44.19,
+      "rentabilidad_explotacion": 21.84
+    },
+    "trends": {
+      "ventas": 15.81,
+      "margen_bruto": 24.53,
+      "ebitda": 34.05,
+      "resultado_neto": 51.07,
+      "patrimonio_neto": 48.7
+    }
+  },
+  {
+    "id": "proudlaces_sl",
+    "name": "PROUDLACES SL",
+    "sector": "Retail / Moda",
+    "country": "España",
+    "latest_year": 2024,
+    "years_available": [
+      2024,
+      2023,
+      2022
+    ],
+    "financial_summary": {
+      "ventas": 20963340.54,
+      "margen_bruto": 8073171.59,
+      "ebitda": 619057.86,
+      "ebit": 272431.12,
+      "resultado_neto": 107673.31,
+      "activo_total": 10935097.97,
+      "patrimonio_neto": 2444532.7,
+      "pasivo_total": 8490565.27,
+      "margen_ebitda_pct": 2.95,
+      "margen_neto_pct": 0.51,
+      "roa": 2.49,
+      "roe": 5.88,
+      "rentabilidad_explotacion": 5.66
+    },
+    "trends": {
+      "ventas": -14.69,
+      "margen_bruto": -7.5,
+      "ebitda": 10024.41,
+      "resultado_neto": 130.27,
+      "patrimonio_neto": 4.61
+    }
+  },
+  {
+    "id": "diagonal_eyewear_sl",
+    "name": "DIAGONAL EYEWEAR SL",
+    "sector": "Retail / Moda",
+    "country": "España",
+    "latest_year": 2024,
+    "years_available": [
+      2024,
+      2023,
+      2022
+    ],
+    "financial_summary": {
+      "ventas": 14529554.06,
+      "margen_bruto": 2086737.85,
+      "ebitda": 434918.14,
+      "ebit": 369399.12,
+      "resultado_neto": 166767.69,
+      "activo_total": 4796594.73,
+      "patrimonio_neto": 544328.06,
+      "pasivo_total": 4252266.67,
+      "margen_ebitda_pct": 2.99,
+      "margen_neto_pct": 1.15,
+      "roa": null,
+      "roe": 45.52,
+      "rentabilidad_explotacion": 9.07
+    },
+    "trends": {
+      "ventas": 41.84,
+      "margen_bruto": 34.12,
+      "ebitda": -27.86,
+      "resultado_neto": -60.68,
+      "patrimonio_neto": -31.93
+    }
+  },
+  {
+    "id": "sa2l_pharmacie_sl",
+    "name": "SA2L PHARMACIE SL",
+    "sector": "Farmacia",
+    "country": "España",
+    "latest_year": 2024,
+    "years_available": [
+      2024,
+      2023,
+      2022
+    ],
+    "financial_summary": {
+      "ventas": 11361149.81,
+      "margen_bruto": 4368833.96,
+      "ebitda": 93275.09,
+      "ebit": 88374.41,
+      "resultado_neto": 57280.23,
+      "activo_total": 3087089.78,
+      "patrimonio_neto": 748203.48,
+      "pasivo_total": 2338886.3,
+      "margen_ebitda_pct": 0.82,
+      "margen_neto_pct": 0.5,
+      "roa": 2.86,
+      "roe": 10.21,
+      "rentabilidad_explotacion": 3.02
+    },
+    "trends": {
+      "ventas": 27.94,
+      "margen_bruto": 25.78,
+      "ebitda": -79.95,
+      "resultado_neto": -88.54,
+      "patrimonio_neto": 8.29
+    }
+  }
+]

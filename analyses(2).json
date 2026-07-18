@@ -1,0 +1,527 @@
+[
+  {
+    "company_id": "snipes_spain_sl",
+    "company_name": "SNIPES SPAIN SL",
+    "years_data": [
+      {
+        "year": 2024,
+        "estado_resultados": {
+          "ventas": 73442708.94,
+          "margen_bruto": 33686397.67,
+          "ebitda": 3475146.5,
+          "ebit": 1890988.1,
+          "resultado_neto": 1612556.62
+        },
+        "balance": {
+          "activo_total": 30117474.36,
+          "activo_no_corriente": 8187195.22,
+          "activo_corriente": 21930279.14,
+          "patrimonio_neto": 20690352.91,
+          "pasivo_no_corriente": 0.0,
+          "pasivo_corriente": 9427121.45,
+          "fondo_maniobra": 12503157.69
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.41,
+          "ratio_solidez": 2.53,
+          "ratio_liquidez": 232.63,
+          "ratio_liquidez_inmediata": 111.94,
+          "porcentaje_endeudamiento": 0.64,
+          "rotacion_activos": 2.44,
+          "roa": 6.28,
+          "rentabilidad_explotacion": 11.54,
+          "roe": 9.12,
+          "coste_deuda": 0.03,
+          "cobertura_servicio_deuda": -0.17,
+          "cobertura_intereses": 365.64
+        }
+      },
+      {
+        "year": 2023,
+        "estado_resultados": {
+          "ventas": 73477510.97,
+          "margen_bruto": 33307461.62,
+          "ebitda": 3079893.9,
+          "ebit": 1540485.43,
+          "resultado_neto": 849839.5
+        },
+        "balance": {
+          "activo_total": 31405504.75,
+          "activo_no_corriente": 8913517.68,
+          "activo_corriente": 22491987.07,
+          "patrimonio_neto": 19077796.29,
+          "pasivo_no_corriente": 0.0,
+          "pasivo_corriente": 12327708.46,
+          "fondo_maniobra": 10164278.61
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.32,
+          "ratio_solidez": 2.14,
+          "ratio_liquidez": 182.45,
+          "ratio_liquidez_inmediata": 94.25,
+          "porcentaje_endeudamiento": 0.5,
+          "rotacion_activos": 2.34,
+          "roa": 4.91,
+          "rentabilidad_explotacion": 9.81,
+          "roe": 8.06,
+          "coste_deuda": 0.01,
+          "cobertura_servicio_deuda": 0.05,
+          "cobertura_intereses": 645.91
+        }
+      },
+      {
+        "year": 2022,
+        "estado_resultados": {
+          "ventas": 66946357.13,
+          "margen_bruto": 30021231.42,
+          "ebitda": 1506971.6,
+          "ebit": -401264.53,
+          "resultado_neto": -401328.0
+        },
+        "balance": {
+          "activo_total": 27624454.63,
+          "activo_no_corriente": 8868141.7,
+          "activo_corriente": 18756312.93,
+          "patrimonio_neto": 16738134.81,
+          "pasivo_no_corriente": 0.0,
+          "pasivo_corriente": 10886319.82,
+          "fondo_maniobra": 7869993.11
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.28,
+          "ratio_solidez": 1.89,
+          "ratio_liquidez": 172.29,
+          "ratio_liquidez_inmediata": 79.91,
+          "porcentaje_endeudamiento": 0.42,
+          "rotacion_activos": 2.42,
+          "roa": -1.45,
+          "rentabilidad_explotacion": 5.46,
+          "roe": -2.4,
+          "coste_deuda": 0.0,
+          "cobertura_servicio_deuda": -0.28,
+          "cobertura_intereses": -6322.11
+        }
+      }
+    ]
+  },
+  {
+    "company_id": "foot_district_sl",
+    "company_name": "FOOT DISTRICT SL",
+    "years_data": [
+      {
+        "year": 2024,
+        "estado_resultados": {
+          "ventas": 26653480.88,
+          "margen_bruto": 10550149.28,
+          "ebitda": 2201352.97,
+          "ebit": 1683041.99,
+          "resultado_neto": 1106037.61
+        },
+        "balance": {
+          "activo_total": 10081931.06,
+          "activo_no_corriente": 1999299.23,
+          "activo_corriente": 8082631.83,
+          "patrimonio_neto": 3368919.94,
+          "pasivo_no_corriente": 790863.52,
+          "pasivo_corriente": 5922147.6,
+          "fondo_maniobra": 2160484.23
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.21,
+          "ratio_solidez": 1.68,
+          "ratio_liquidez": 136.48,
+          "ratio_liquidez_inmediata": 8.85,
+          "porcentaje_endeudamiento": 21.33,
+          "rotacion_activos": 2.64,
+          "roa": 16.69,
+          "rentabilidad_explotacion": 21.84,
+          "roe": 44.19,
+          "coste_deuda": 0.09,
+          "cobertura_servicio_deuda": 8.72,
+          "cobertura_intereses": 8.51
+        }
+      },
+      {
+        "year": 2023,
+        "estado_resultados": {
+          "ventas": 23015494.65,
+          "margen_bruto": 8471752.82,
+          "ebitda": 1642202.17,
+          "ebit": 1201050.76,
+          "resultado_neto": 732142.28
+        },
+        "balance": {
+          "activo_total": 109340303.43,
+          "activo_no_corriente": 2156914.54,
+          "activo_corriente": 8767388.88,
+          "patrimonio_neto": 2265514.64,
+          "pasivo_no_corriente": 1261013.79,
+          "pasivo_corriente": 7397774.99,
+          "fondo_maniobra": 1369613.89
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.13,
+          "ratio_solidez": 1.04,
+          "ratio_liquidez": 118.51,
+          "ratio_liquidez_inmediata": 3.77,
+          "porcentaje_endeudamiento": 6.05,
+          "rotacion_activos": 2.11,
+          "roa": 10.99,
+          "rentabilidad_explotacion": 15.03,
+          "roe": 43.58,
+          "coste_deuda": 0.06,
+          "cobertura_servicio_deuda": 16.2,
+          "cobertura_intereses": 5.57
+        }
+      },
+      {
+        "year": 2022,
+        "estado_resultados": {
+          "ventas": 20658319.79,
+          "margen_bruto": 7979664.49,
+          "ebitda": 1790209.85,
+          "ebit": 1437045.38,
+          "resultado_neto": 942927.12
+        },
+        "balance": {
+          "activo_total": 103261764.0,
+          "activo_no_corriente": 2263987.28,
+          "activo_corriente": 8071776.72,
+          "patrimonio_neto": 1524099.0,
+          "pasivo_no_corriente": 959138.06,
+          "pasivo_corriente": 7852526.94,
+          "fondo_maniobra": 219249.78
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.02,
+          "ratio_solidez": 0.67,
+          "ratio_liquidez": 102.79,
+          "ratio_liquidez_inmediata": 3.23,
+          "porcentaje_endeudamiento": 36.22,
+          "rotacion_activos": 2.0,
+          "roa": 13.9,
+          "rentabilidad_explotacion": 17.32,
+          "roe": 2.89,
+          "coste_deuda": 0.05,
+          "cobertura_servicio_deuda": -49.94,
+          "cobertura_intereses": 8.27
+        }
+      }
+    ]
+  },
+  {
+    "company_id": "proudlaces_sl",
+    "company_name": "PROUDLACES SL",
+    "years_data": [
+      {
+        "year": 2024,
+        "estado_resultados": {
+          "ventas": 20963340.54,
+          "margen_bruto": 8073171.59,
+          "ebitda": 619057.86,
+          "ebit": 272431.12,
+          "resultado_neto": 107673.31
+        },
+        "balance": {
+          "activo_total": 10935097.97,
+          "activo_no_corriente": 3680612.4,
+          "activo_corriente": 7254485.57,
+          "patrimonio_neto": 2444532.7,
+          "pasivo_no_corriente": 1770587.17,
+          "pasivo_corriente": 6719978.1,
+          "fondo_maniobra": 534507.47
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.05,
+          "ratio_solidez": 0.66,
+          "ratio_liquidez": 107.95,
+          "ratio_liquidez_inmediata": 7.49,
+          "porcentaje_endeudamiento": 35.28,
+          "rotacion_activos": 1.92,
+          "roa": 2.49,
+          "rentabilidad_explotacion": 5.66,
+          "roe": 5.88,
+          "coste_deuda": 0.06,
+          "cobertura_servicio_deuda": -25.06,
+          "cobertura_intereses": 1.26
+        }
+      },
+      {
+        "year": 2023,
+        "estado_resultados": {
+          "ventas": 24572157.92,
+          "margen_bruto": 8727361.35,
+          "ebitda": 6114.51,
+          "ebit": -367779.35,
+          "resultado_neto": -355707.08
+        },
+        "balance": {
+          "activo_total": 16009663.0,
+          "activo_no_corriente": 4113845.84,
+          "activo_corriente": 9706163.06,
+          "patrimonio_neto": 2336859.4,
+          "pasivo_no_corriente": 2638481.95,
+          "pasivo_corriente": 8844667.55,
+          "fondo_maniobra": 861495.51
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.06,
+          "ratio_solidez": 0.57,
+          "ratio_liquidez": 109.74,
+          "ratio_liquidez_inmediata": 11.89,
+          "porcentaje_endeudamiento": 38.82,
+          "rotacion_activos": 1.78,
+          "roa": -2.66,
+          "rentabilidad_explotacion": 0.04,
+          "roe": -20.33,
+          "coste_deuda": 0.03,
+          "cobertura_servicio_deuda": 73.13,
+          "cobertura_intereses": -2.48
+        }
+      },
+      {
+        "year": 2022,
+        "estado_resultados": {
+          "ventas": 22187938.61,
+          "margen_bruto": 9580878.75,
+          "ebitda": 1043787.22,
+          "ebit": 651975.81,
+          "resultado_neto": 433493.05
+        },
+        "balance": {
+          "activo_total": 12073269.16,
+          "activo_no_corriente": 1614190.01,
+          "activo_corriente": 10459178.6,
+          "patrimonio_neto": 2715066.47,
+          "pasivo_no_corriente": 1799203.99,
+          "pasivo_corriente": 7559098.15,
+          "fondo_maniobra": 2900080.45
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.24,
+          "ratio_solidez": 1.68,
+          "ratio_liquidez": 138.37,
+          "ratio_liquidez_inmediata": 8.57,
+          "porcentaje_endeudamiento": 6.75,
+          "rotacion_activos": 1.84,
+          "roa": 5.4,
+          "rentabilidad_explotacion": 8.64,
+          "roe": 21.31,
+          "coste_deuda": 0.01,
+          "cobertura_servicio_deuda": 6.54,
+          "cobertura_intereses": 23.87
+        }
+      }
+    ]
+  },
+  {
+    "company_id": "diagonal_eyewear_sl",
+    "company_name": "DIAGONAL EYEWEAR SL",
+    "years_data": [
+      {
+        "year": 2024,
+        "estado_resultados": {
+          "ventas": 14529554.06,
+          "margen_bruto": 2086737.85,
+          "ebitda": 434918.14,
+          "ebit": 369399.12,
+          "resultado_neto": 166767.69
+        },
+        "balance": {
+          "activo_total": 4796594.73,
+          "activo_no_corriente": 367660.67,
+          "activo_corriente": 4428934.06,
+          "patrimonio_neto": 544328.06,
+          "pasivo_no_corriente": 162935.95,
+          "pasivo_corriente": 4089330.72,
+          "fondo_maniobra": null
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": null,
+          "ratio_solidez": null,
+          "ratio_liquidez": null,
+          "ratio_liquidez_inmediata": null,
+          "porcentaje_endeudamiento": null,
+          "rotacion_activos": null,
+          "roa": null,
+          "rentabilidad_explotacion": 9.07,
+          "roe": 45.52,
+          "coste_deuda": null,
+          "cobertura_servicio_deuda": null,
+          "cobertura_intereses": null
+        }
+      },
+      {
+        "year": 2023,
+        "estado_resultados": {
+          "ventas": 10243641.77,
+          "margen_bruto": 1555860.86,
+          "ebitda": 602890.27,
+          "ebit": 558374.47,
+          "resultado_neto": 424128.22
+        },
+        "balance": {
+          "activo_total": 4030514.53,
+          "activo_no_corriente": 663396.08,
+          "activo_corriente": 3367118.45,
+          "patrimonio_neto": 799640.59,
+          "pasivo_no_corriente": 251142.51,
+          "pasivo_corriente": 2979731.43,
+          "fondo_maniobra": null
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": null,
+          "ratio_solidez": null,
+          "ratio_liquidez": null,
+          "ratio_liquidez_inmediata": null,
+          "porcentaje_endeudamiento": null,
+          "rotacion_activos": null,
+          "roa": null,
+          "rentabilidad_explotacion": 14.96,
+          "roe": 75.86,
+          "coste_deuda": null,
+          "cobertura_servicio_deuda": null,
+          "cobertura_intereses": null
+        }
+      },
+      {
+        "year": 2022,
+        "estado_resultados": {
+          "ventas": 10026640.28,
+          "margen_bruto": 1563483.72,
+          "ebitda": 765884.43,
+          "ebit": 746016.82,
+          "resultado_neto": 561171.29
+        },
+        "balance": {
+          "activo_total": 3795247.42,
+          "activo_no_corriente": 990368.64,
+          "activo_corriente": 2804878.78,
+          "patrimonio_neto": 979822.84,
+          "pasivo_no_corriente": 455790.86,
+          "pasivo_corriente": 2359633.72,
+          "fondo_maniobra": null
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": null,
+          "ratio_solidez": null,
+          "ratio_liquidez": null,
+          "ratio_liquidez_inmediata": null,
+          "porcentaje_endeudamiento": null,
+          "rotacion_activos": null,
+          "roa": null,
+          "rentabilidad_explotacion": 17.32,
+          "roe": 77.65,
+          "coste_deuda": null,
+          "cobertura_servicio_deuda": null,
+          "cobertura_intereses": null
+        }
+      }
+    ]
+  },
+  {
+    "company_id": "sa2l_pharmacie_sl",
+    "company_name": "SA2L PHARMACIE SL",
+    "years_data": [
+      {
+        "year": 2024,
+        "estado_resultados": {
+          "ventas": 11361149.81,
+          "margen_bruto": 4368833.96,
+          "ebitda": 93275.09,
+          "ebit": 88374.41,
+          "resultado_neto": 57280.23
+        },
+        "balance": {
+          "activo_total": 3087089.78,
+          "activo_no_corriente": 114752.08,
+          "activo_corriente": 2972337.7,
+          "patrimonio_neto": 748203.48,
+          "pasivo_no_corriente": 0.0,
+          "pasivo_corriente": 2338886.3,
+          "fondo_maniobra": 633451.46
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.2,
+          "ratio_solidez": 6.52,
+          "ratio_liquidez": 127.08,
+          "ratio_liquidez_inmediata": 37.99,
+          "porcentaje_endeudamiento": 11.13,
+          "rotacion_activos": 3.68,
+          "roa": 2.86,
+          "rentabilidad_explotacion": 3.02,
+          "roe": 10.21,
+          "coste_deuda": 0.04,
+          "cobertura_servicio_deuda": 5.52,
+          "cobertura_intereses": 7.36
+        }
+      },
+      {
+        "year": 2023,
+        "estado_resultados": {
+          "ventas": 8880153.61,
+          "margen_bruto": 3473315.35,
+          "ebitda": 465192.82,
+          "ebit": 460780.98,
+          "resultado_neto": 499617.73
+        },
+        "balance": {
+          "activo_total": 2282758.4,
+          "activo_no_corriente": 68530.02,
+          "activo_corriente": 2214228.38,
+          "patrimonio_neto": 690923.25,
+          "pasivo_no_corriente": 0.0,
+          "pasivo_corriente": 1591835.15,
+          "fondo_maniobra": 22393.23
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.27,
+          "ratio_solidez": 10.08,
+          "ratio_liquidez": 139.11,
+          "ratio_liquidez_inmediata": 44.42,
+          "porcentaje_endeudamiento": 42.55,
+          "rotacion_activos": 3.89,
+          "roa": 20.18,
+          "rentabilidad_explotacion": 20.38,
+          "roe": 72.31,
+          "coste_deuda": 0.04,
+          "cobertura_servicio_deuda": 17.46,
+          "cobertura_intereses": null
+        }
+      },
+      {
+        "year": 2022,
+        "estado_resultados": {
+          "ventas": 4588370.8,
+          "margen_bruto": 1322827.15,
+          "ebitda": 27787.81,
+          "ebit": 27497.87,
+          "resultado_neto": 27497.87
+        },
+        "balance": {
+          "activo_total": 1140304.1,
+          "activo_no_corriente": 59924.41,
+          "activo_corriente": 1080379.69,
+          "patrimonio_neto": 191305.52,
+          "pasivo_no_corriente": 0.0,
+          "pasivo_corriente": 948998.58,
+          "fondo_maniobra": 131381.11
+        },
+        "ratios": {
+          "ratio_fondo_maniobra": 0.12,
+          "ratio_solidez": 3.19,
+          "ratio_liquidez": 13.84,
+          "ratio_liquidez_inmediata": 59.59,
+          "porcentaje_endeudamiento": 5.0,
+          "rotacion_activos": 4.02,
+          "roa": 2.41,
+          "rentabilidad_explotacion": 2.44,
+          "roe": 14.37,
+          "coste_deuda": null,
+          "cobertura_servicio_deuda": null,
+          "cobertura_intereses": null
+        }
+      }
+    ]
+  }
+]
