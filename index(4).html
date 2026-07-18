@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Financiero Empresas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg: #f7f6f2;
+      --surface: #fbfbf9;
+      --surface-2: #f1efe9;
+      --border: #ddd8cf;
+      --text: #23211c;
+      --muted: #6e6c66;
+      --primary: #0f6b72;
+      --primary-soft: #dce9e7;
+      --success: #3f7a25;
+      --warning: #9a4d19;
+      --danger: #a1364d;
+      --shadow: 0 10px 30px rgba(24, 24, 20, 0.08);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .container {
+      width: min(1280px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    header {
+      padding: 28px 0 18px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(247,246,242,.9);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 20;
+    }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .brand p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    main { padding: 28px 0 80px; }
+    .section { margin-top: 28px; }
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 1.25rem;
+    }
+    .section p.lead {
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 80ch;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+    .grid.kpis {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .grid.charts {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .grid.audit {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .kpi-label {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 8px;
+    }
+    .kpi-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+    .kpi-sub {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .chart-wrap {
+      min-height: 360px;
+    }
+    .chart-wrap h3, .table-card h3, .audit-card h3 {
+      margin: 0 0 14px;
+      font-size: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .92rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--primary-soft);
+      color: var(--primary);
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 600;
+    }
+    .audit-card p {
+      margin: 0 0 12px;
+      color: #37352f;
+      font-size: .95rem;
+    }
+    .audit-card p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .methodology {
+      font-size: .92rem;
+      color: var(--muted);
+    }
+    @media (max-width: 720px) {
+      .header-row { flex-direction: column; align-items: flex-start; }
+      .kpi-value { font-size: 1.5rem; }
+      .container { width: min(100% - 20px, 1280px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-row">
+      <div class="brand">
+        <h1>Dashboard financiero y análisis de auditoría</h1>
+        <p>Comparativa 2022–2024 basada en balances, resultados y ratios disponibles.</p>
+      </div>
+      <div class="pill">GitHub Pages · datos locales JSON</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>Indicadores clave (2024)</h2>
+      <p class="lead">Resumen agregado del último ejercicio disponible para las cinco empresas analizadas, usando los datos consolidados de tus JSON y normalizando el endeudamiento cuando el valor llega en formato “veces”.</p>
+      <div id="kpiGrid" class="grid kpis"></div>
+    </section>
+
+    <section class="section">
+      <h2>Comparativa visual</h2>
+      <p class="lead">Los gráficos usan 2024 como referencia para comparar tamaño, rentabilidad y estructura financiera, y la serie histórica 2022–2024 para evolución. El endeudamiento de SNIPES se representa como 64 %, 50 % y 42 % tras reinterpretar 0,64 / 0,50 / 0,42 como porcentaje equivalente.[file:95]</p>
+      <div class="grid charts">
+        <div class="card chart-wrap"><h3>Ventas por empresa (2024)</h3><canvas id="salesChart"></canvas></div>
+        <div class="card chart-wrap"><h3>EBITDA por empresa (2024)</h3><canvas id="ebitdaChart"></canvas></div>
+        <div class="card chart-wrap"><h3>ROE por empresa (2024)</h3><canvas id="roeChart"></canvas></div>
+        <div class="card chart-wrap"><h3>Endeudamiento por empresa (2024)</h3><canvas id="debtChart"></canvas></div>
+        <div class="card chart-wrap"><h3>Evolución de ventas (2022–2024)</h3><canvas id="salesTrendChart"></canvas></div>
+        <div class="card chart-wrap"><h3>Evolución de EBITDA (2022–2024)</h3><canvas id="ebitdaTrendChart"></canvas></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tabla resumen 2024</h2>
+      <div class="card table-card">
+        <h3>Magnitudes principales</h3>
+        <div style="overflow:auto;">
+          <table id="summaryTable"></table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tabla de ratios</h2>
+      <div class="card table-card">
+        <h3>Ratios financieros 2024</h3>
+        <div style="overflow:auto;">
+          <table id="ratiosTable"></table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Análisis de auditoría por empresa</h2>
+      <p class="lead">Estos comentarios están redactados a partir de los balances, resultados y ratios disponibles, sin inventar datos faltantes y reflejando la reinterpretación del endeudamiento cuando procede.[file:94][file:95]</p>
+      <div id="auditGrid" class="grid audit"></div>
+    </section>
+
+    <section class="section">
+      <h2>Metodología</h2>
+      <div class="card methodology">
+        <p>La web se alimenta de <code>companies-2.json</code> y <code>analyses-3.json</code>, que contienen el resumen financiero 2024 y el detalle por años 2022–2024 de cada empresa.[file:94][file:95]</p>
+        <p>Regla aplicada para el endeudamiento: si el campo <code>porcentaje_endeudamiento</code> está entre 0 y 1, se interpreta como ratio en veces y se convierte a porcentaje multiplicando por 100; si ya es mayor o igual que 1, se mantiene tal cual.[file:95]</p>
+        <p>Los valores nulos se muestran como NA. Los comentarios de auditoría son analíticos y orientativos; no sustituyen una auditoría legal ni la revisión de memoria, notas, contratos o papeles de trabajo.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const COLORS = ['#0f6b72', '#c17c11', '#7b4db3', '#ad3d5f', '#3f7a25'];
+    let companies = [];
+    let analyses = [];
+
+    function normalizeDebtPercentage(value) {
+      if (value === null || value === undefined || Number.isNaN(value)) return null;
+      if (value > 0 && value < 1) return value * 100;
+      return value;
+    }
+
+    function normalizeAnalyses(data) {
+      return data.map(company => ({
+        ...company,
+        years_data: company.years_data.map(y => ({
+          ...y,
+          ratios: {
+            ...y.ratios,
+            porcentaje_endeudamiento: normalizeDebtPercentage(y.ratios?.porcentaje_endeudamiento),
+          }
+        }))
+      }));
+    }
+
+    function formatCurrency(value) {
+      if (value === null || value === undefined || Number.isNaN(value)) return 'NA';
+      return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
+    }
+
+    function formatNumber(value, digits = 2) {
+      if (value === null || value === undefined || Number.isNaN(value)) return 'NA';
+      return new Intl.NumberFormat('es-ES', { minimumFractionDigits: digits, maximumFractionDigits: digits }).format(value);
+    }
+
+    function formatPercent(value, digits = 2) {
+      if (value === null || value === undefined || Number.isNaN(value)) return 'NA';
+      return `${formatNumber(value, digits)} %`;
+    }
+
+    function getLatestYearData(companyId) {
+      const company = analyses.find(c => c.company_id === companyId);
+      if (!company) return null;
+      return company.years_data.find(y => y.year === 2024) || company.years_data[0] || null;
+    }
+
+    function buildKpis() {
+      const grid = document.getElementById('kpiGrid');
+      const totalSales = companies.reduce((sum, c) => sum + (c.financial_summary?.ventas || 0), 0);
+      const totalEbitda = companies.reduce((sum, c) => sum + (c.financial_summary?.ebitda || 0), 0);
+      const avgRoe = companies.filter(c => c.financial_summary?.roe != null).reduce((sum, c, _, arr) => sum + c.financial_summary.roe / arr.length, 0);
+      const avgDebt = analyses.map(c => getLatestYearData(c.company_id)?.ratios?.porcentaje_endeudamiento).filter(v => v != null).reduce((sum, v, _, arr) => sum + v / arr.length, 0);
+      const cards = [
+        ['Ventas agregadas', formatCurrency(totalSales), 'Suma 2024 del conjunto'],
+        ['EBITDA agregado', formatCurrency(totalEbitda), 'Resultado operativo antes de amortización'],
+        ['ROE medio', formatPercent(avgRoe), 'Media simple 2024'],
+        ['Endeudamiento medio', formatPercent(avgDebt), 'Normalizado donde procedía'],
+      ];
+      grid.innerHTML = cards.map(([label, value, sub]) => `
+        <div class="card">
+          <div class="kpi-label">${label}</div>
+          <div class="kpi-value">${value}</div>
+          <div class="kpi-sub">${sub}</div>
+        </div>
+      `).join('');
+    }
+
+    function chartOptions() {
+      return {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: '#37352f' } } },
+        scales: {
+          x: { ticks: { color: '#5f5c56' }, grid: { color: 'rgba(0,0,0,0.04)' } },
+          y: { ticks: { color: '#5f5c56' }, grid: { color: 'rgba(0,0,0,0.06)' } }
+        }
+      };
+    }
+
+    function buildCharts() {
+      const labels = companies.map(c => c.name);
+      const sales = companies.map(c => c.financial_summary.ventas);
+      const ebitda = companies.map(c => c.financial_summary.ebitda);
+      const roe = companies.map(c => c.financial_summary.roe);
+      const debt = companies.map(c => getLatestYearData(c.id)?.ratios?.porcentaje_endeudamiento ?? null);
+
+      new Chart(document.getElementById('salesChart'), {
+        type: 'bar',
+        data: { labels, datasets: [{ label: 'Ventas', data: sales, backgroundColor: COLORS }] },
+        options: chartOptions()
+      });
+
+      new Chart(document.getElementById('ebitdaChart'), {
+        type: 'bar',
+        data: { labels, datasets: [{ label: 'EBITDA', data: ebitda, backgroundColor: COLORS }] },
+        options: chartOptions()
+      });
+
+      new Chart(document.getElementById('roeChart'), {
+        type: 'bar',
+        data: { labels, datasets: [{ label: 'ROE (%)', data: roe, backgroundColor: COLORS }] },
+        options: chartOptions()
+      });
+
+      new Chart(document.getElementById('debtChart'), {
+        type: 'bar',
+        data: { labels, datasets: [{ label: 'Endeudamiento (%)', data: debt, backgroundColor: COLORS }] },
+        options: chartOptions()
+      });
+
+      const years = [2022, 2023, 2024];
+      new Chart(document.getElementById('salesTrendChart'), {
+        type: 'line',
+        data: {
+          labels: years,
+          datasets: analyses.map((company, i) => ({
+            label: company.company_name,
+            data: years.map(year => company.years_data.find(y => y.year === year)?.estado_resultados?.ventas ?? null),
+            borderColor: COLORS[i],
+            backgroundColor: COLORS[i],
+            tension: 0.35
+          }))
+        },
+        options: chartOptions()
+      });
+
+      new Chart(document.getElementById('ebitdaTrendChart'), {
+        type: 'line',
+        data: {
+          labels: years,
+          datasets: analyses.map((company, i) => ({
+            label: company.company_name,
+            data: years.map(year => company.years_data.find(y => y.year === year)?.estado_resultados?.ebitda ?? null),
+            borderColor: COLORS[i],
+            backgroundColor: COLORS[i],
+            tension: 0.35
+          }))
+        },
+        options: chartOptions()
+      });
+    }
+
+    function buildSummaryTable() {
+      const table = document.getElementById('summaryTable');
+      table.innerHTML = `
+        <thead>
+          <tr>
+            <th>Empresa</th>
+            <th>Ventas</th>
+            <th>Margen EBITDA</th>
+            <th>Resultado neto</th>
+            <th>Activo total</th>
+            <th>Patrimonio neto</th>
+            <th>ROA</th>
+            <th>ROE</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${companies.map(c => `
+            <tr>
+              <td><span class="badge">${c.name}</span></td>
+              <td>${formatCurrency(c.financial_summary.ventas)}</td>
+              <td>${formatPercent(c.financial_summary.margen_ebitda_pct)}</td>
+              <td>${formatCurrency(c.financial_summary.resultado_neto)}</td>
+              <td>${formatCurrency(c.financial_summary.activo_total)}</td>
+              <td>${formatCurrency(c.financial_summary.patrimonio_neto)}</td>
+              <td>${formatPercent(c.financial_summary.roa)}</td>
+              <td>${formatPercent(c.financial_summary.roe)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      `;
+    }
+
+    function buildRatiosTable() {
+      const table = document.getElementById('ratiosTable');
+      table.innerHTML = `
+        <thead>
+          <tr>
+            <th>Empresa</th>
+            <th>Liquidez</th>
+            <th>Liquidez inmediata</th>
+            <th>Endeudamiento</th>
+            <th>Coste deuda</th>
+            <th>Cob. intereses</th>
+            <th>Cob. servicio deuda</th>
+            <th>Rotación activos</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${analyses.map(c => {
+            const y = c.years_data.find(v => v.year === 2024);
+            return `
+              <tr>
+                <td><span class="badge">${c.company_name}</span></td>
+                <td>${formatPercent(y?.ratios?.ratio_liquidez)}</td>
+                <td>${formatPercent(y?.ratios?.ratio_liquidez_inmediata)}</td>
+                <td>${formatPercent(y?.ratios?.porcentaje_endeudamiento)}</td>
+                <td>${formatPercent(y?.ratios?.coste_deuda != null ? y.ratios.coste_deuda * 100 : null)}</td>
+                <td>${formatNumber(y?.ratios?.cobertura_intereses)}</td>
+                <td>${formatNumber(y?.ratios?.cobertura_servicio_deuda)}</td>
+                <td>${formatNumber(y?.ratios?.rotacion_activos)}</td>
+              </tr>
+            `;
+          }).join('')}
+        </tbody>
+      `;
+    }
+
+    function buildAuditTexts() {
+      return {
+        snipes_spain_sl: {
+          title: 'SNIPES SPAIN SL',
+          paragraphs: [
+            'SNIPES presenta una posición financiera muy sólida, con un patrimonio neto elevado en relación con el activo y una liquidez holgada. El fondo de maniobra es amplio y no se aprecian tensiones de tesorería a corto plazo.[file:95]',
+            'El punto más débil no está en la solvencia sino en la eficiencia operativa: pese a manejar un margen bruto relevante, el margen EBITDA y el margen EBIT son relativamente bajos para el volumen de ventas. Esto sugiere una estructura de costes operativos exigente.[file:94][file:95]',
+            'El endeudamiento 2024 se representa como 64 %, al reinterpretar el 0,64 del fichero como ratio en veces equivalente a porcentaje. Con ese criterio, la estructura sigue siendo manejable gracias a la buena liquidez y a la fuerte cobertura de intereses.[file:95]'
+          ]
+        },
+        foot_district_sl: {
+          title: 'FOOT DISTRICT SL',
+          paragraphs: [
+            'FOOT DISTRICT destaca por una rentabilidad muy alta en 2024, con ROA y ROE claramente superiores al resto del grupo. El negocio convierte bien ventas en EBITDA y beneficio, y muestra una muy buena rotación de activos.[file:94][file:95]',
+            'Su principal punto de vigilancia está en la liquidez inmediata, reducida, y en un coste de deuda relativamente alto frente a otras compañías analizadas. Esto obliga a cuidar la gestión del circulante y la planificación de pagos.[file:95]',
+            'Desde una óptica de auditoría, el negocio parece rentable y sostenible, pero conviene revisar el calendario de vencimientos, la calidad de existencias y la sensibilidad del margen ante cambios de demanda o financiación.[file:95]'
+          ]
+        },
+        proudlaces_sl: {
+          title: 'PROUDLACES SL',
+          paragraphs: [
+            'PROUDLACES muestra una estructura financiera más frágil, con liquidez ajustada, fondo de maniobra limitado y rentabilidad todavía modesta tras un ejercicio previo complicado. La mejora de 2024 existe, pero no elimina el riesgo.[file:94][file:95]',
+            'El endeudamiento es relevante y la cobertura de intereses resulta débil, por lo que la empresa es sensible a caídas del resultado o a cambios en condiciones financieras. Además, la liquidez inmediata baja aumenta la dependencia del cobro y la rotación de stock.[file:95]',
+            'En términos de auditoría, sería una compañía para seguir de cerca: hay que observar la calidad del activo circulante, la evolución del beneficio y la capacidad real de sostener la recuperación operativa.[file:95]'
+          ]
+        },
+        diagonal_eyewear_sl: {
+          title: 'DIAGONAL EYEWEAR SL',
+          paragraphs: [
+            'DIAGONAL EYEWEAR presenta el perfil más delicado desde el punto de vista financiero, con patrimonio neto reducido, fuerte peso del pasivo corriente y márgenes operativos estrechos. La estructura está muy apoyada en financiación ajena de corto plazo.[file:94][file:95]',
+            'Aunque la empresa crece en ventas, la calidad del beneficio es menos robusta que en otros casos y faltan algunos ratios clave en el dataset. Esa combinación obliga a ser prudentes al interpretar la fortaleza real del balance.[file:94][file:95]',
+            'En un análisis de auditoría, sería prioritario revisar continuidad, calidad de existencias y clientes, vencimientos de deuda y capacidad de reforzar capital. Es la empresa con mayor riesgo financiero relativo del conjunto.[file:95]'
+          ]
+        },
+        sa2l_pharmacie_sl: {
+          title: 'SA2L PHARMACIE SL',
+          paragraphs: [
+            'SA2L PHARMACIE mantiene un nivel de endeudamiento bajo y una liquidez razonable, con buena rotación del activo y un coste financiero asumible. La estructura patrimonial es más estable que la de las empresas con mayor tensión financiera.[file:94][file:95]',
+            'El punto crítico está en la caída de rentabilidad en 2024 frente a 2023: el margen EBITDA y el beneficio neto se reducen con fuerza pese a que las ventas siguen creciendo. Esto sugiere presión en costes o normalización tras un año excepcional.[file:94][file:95]',
+            'Desde un punto de vista de auditoría, no parece una compañía tensionada por deuda, pero sí requiere entender bien la caída del beneficio y evaluar si el nuevo nivel de rentabilidad es estructural o transitorio.[file:95]'
+          ]
+        }
+      };
+    }
+
+    function buildAuditGrid() {
+      const grid = document.getElementById('auditGrid');
+      const comments = buildAuditTexts();
+      grid.innerHTML = analyses.map(c => {
+        const item = comments[c.company_id];
+        return `
+          <article class="card audit-card">
+            <h3>${item.title}</h3>
+            ${item.paragraphs.map(p => `<p>${p}</p>`).join('')}
+          </article>
+        `;
+      }).join('');
+    }
+
+    async function init() {
+      const [companiesRes, analysesRes] = await Promise.all([
+        fetch('./companies-2.json'),
+        fetch('./analyses-3.json')
+      ]);
+      companies = await companiesRes.json();
+      analyses = normalizeAnalyses(await analysesRes.json());
+      buildKpis();
+      buildCharts();
+      buildSummaryTable();
+      buildRatiosTable();
+      buildAuditGrid();
+    }
+
+    init();
+  </script>
+</body>
+</html>
